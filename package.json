@@ -2,6 +2,7 @@
   "name": "fast-note",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "app.js",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -40,9 +41,7 @@
     "rxjs": "^5.5.2",
     "typescript": "~2.4.2",
     "web-animations-js": "^2.3.1",
-    "zone.js": "^0.8.14"
-  },
-  "devDependencies": {
+    "zone.js": "^0.8.14",
     "@angular/language-service": "^5.0.0",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
@@ -59,6 +58,8 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0"
+  },
+  "devDependencies": {
   },
   "engines": {
     "node": "8.9.1",
