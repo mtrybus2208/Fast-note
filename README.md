@@ -1,27 +1,31 @@
-# Testy
+# FAST-NOTE APP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
+## Single Page Application for fast and simple creating notes.
+
+## Frontend
+
+* For Redux-Style state management I used ngrx library
+
+## Backend
+
+* For backend I used RESTful API (Node, Express, Mongoose) - <a href="https://github.com/mtrybus2208/fast-note-rest-api">Fast Note REST API</a>
+* Authentication is provided by JSON web tokens. 
+* Current User stores information about films in Firestore database 
+
+## List of technologies used in project:
+
+* Bootstrap 4
+* Sass
+* ngrx
+* RxJS
+
+Preview: <a href="https://mtrybus2208.github.io/Fast-note/auth/signin">mtrybus2208.github.io/Fast-note/</a>
+
+<img src="https://images81.fotosik.pl/962/275dde32082da72bgen.png">
+<img src="https://images83.fotosik.pl/961/af6cec38e4ad6014.png">
 
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
-
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
