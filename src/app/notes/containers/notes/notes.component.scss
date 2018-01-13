@@ -1,0 +1,54 @@
+@import '~sass/variables';
+
+.notes {
+  overflow-x: hidden;
+  height: 100%;
+  background: $white;
+}
+.notes__content {
+  display: flex; 
+  align-items: flex-start;
+  width: 200%;
+  transition: 200ms margin linear;
+}
+.notes__sidebar-container {
+  width: 50%;
+  transition: 200ms margin linear;
+}
+.notes__details-container {
+  width: 50%;
+  max-height: calc(100vh - (#{$navbar-min-height} * 2));
+  overflow-y: auto;
+}
+.hideSidebar {
+  margin-left: -100%;
+}
+@media(min-width: 992px) {
+  .notes__sidebar-container {
+    width: 33%;
+  }
+  .notes__details-container {
+    width: 100%;
+    flex: 1;
+  }
+  .notes__content {
+    width: 100%;
+  }
+  .hideSidebar {
+    margin-left: 0%;
+  }
+  .hideSidebar .notes__sidebar-container {
+    margin-left: -33%;
+  }
+}
+@media(max-height: $change-display-height){
+  .notes__details-container{
+    max-height: calc(100vh - #{$navbar-min-height});
+    overflow-y: auto;
+  }
+}
+ 
+
+ 
+
+ 

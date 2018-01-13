@@ -1,0 +1,19 @@
+<ng-template #content="" let-c="close" let-d="dismiss">
+  <div class="modal-wrap" [@slideToogle] style="background-color: #fff;">
+    <div class="modal-header">
+      <h4 class="modal-title">Warning</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click'); onCloseModal.emit()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>{{ modalInfo }}</p>
+    </div>
+    <div class="modal-footer">
+      <div class="btn-group d-flex w-100" role="group">
+        <button class="btn btn-danger w-100" type="button" (click)="d('Cross click'); onCloseModal.emit(true)">Yes</button>
+        <button class="btn btn-warning w-100" type="button" (click)="d('Cross click'); onCloseModal.emit(false)">No</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

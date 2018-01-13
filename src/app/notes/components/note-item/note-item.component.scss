@@ -1,0 +1,28 @@
+@import '~sass/variables';
+
+.list-group-item{
+  word-wrap: break-word;
+  background-color: $primary-light!important;
+  margin-bottom: 1.5rem;
+  padding: 0!important;
+}
+.note-active {
+  border: 1px solid lighten($primary-dark, 5%);
+}
+.note-item__top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  font-size: .9rem;
+  padding: 0.5rem 1rem;
+  color: darken($primary-dark, 10%);
+  border-bottom: 1px solid darken($primary-light, 5%);
+}
+.note-icon {
+  font-size: 1.1rem;
+}
+.note-panel {
+  padding: 0.5rem 1rem;
+}

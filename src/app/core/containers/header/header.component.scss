@@ -1,0 +1,18 @@
+@import '~sass/variables';
+
+.active {
+  color: $primary;
+}
+a {
+  color: $gray-700;
+}
+.title {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 400;
+}
+.user-button {
+  background-color: transparent;
+  color: $gray-650!important;
+}
+ 

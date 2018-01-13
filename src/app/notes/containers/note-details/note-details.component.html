@@ -1,0 +1,20 @@
+<div class="note-form__wrap p-md-3 p-xl-4">
+  <app-note-form
+    [note]="(note$ | async)" 
+    [loading]="(loading$ | async)" 
+    [loaded]="(loaded$ | async)" 
+    (create)="onCreate($event)"
+    (update)="onUpdate($event)"
+    (removeConfirm)="onRemoveConfirm($event)">
+  </app-note-form>
+</div>
+
+<app-modal
+  [modalState]="this.openedModalName$ | async"
+  (onCloseModal)="handleCloseModal($event)">
+</app-modal>
+
+ 
+ 
+
+

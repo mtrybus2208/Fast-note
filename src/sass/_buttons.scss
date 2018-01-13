@@ -1,0 +1,15 @@
+.btn {
+  cursor: pointer;
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .25;
+    @include box-shadow(none);
+  }
+
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
+    background-image: none;
+    @include box-shadow($input-btn-focus-box-shadow, $btn-active-box-shadow);
+  }
+} 

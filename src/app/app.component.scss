@@ -1,0 +1,5 @@
+@import '~sass/variables';
+
+main {
+  min-height: calc(100vh - (#{$navbar-min-height} * 2));
+} 

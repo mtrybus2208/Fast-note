@@ -1,0 +1,36 @@
+@import '~sass/variables';
+
+.notes-sidebar__top{
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+}
+.notes-sidebar__body{
+  overflow-y: auto;
+  height: 100%;
+}
+.loader {
+  color: $primary;
+  font-size: 3.5rem;
+  margin: 1.5rem auto;
+}
+.notes-sidebar__top{
+  height: $notes-sidebar-top-max-height;
+  overflow-y: auto;
+}
+.notes-sidebar__body{
+  overflow-y: scroll;
+  height: calc(100vh - (#{$navbar-min-height} * 2) - #{$notes-sidebar-top-max-height});
+}
+.list-group{
+  padding: 0 1.5rem;
+}
+@media(max-height: $change-display-height){
+  .notes-sidebar__body{
+    overflow-y: scroll;
+    height: calc(100vh - (#{$navbar-min-height}  ) - #{$notes-sidebar-top-max-height});
+  }
+}
+
+
+
+

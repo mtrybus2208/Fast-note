@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 my-5">
+      <h3 class="text-center mb-5">Please sign in</h3>
+        <app-signin-form
+        (signIn)="onSignIn($event)"
+        (resetError)="onResetError()"
+        [loading]="(loading$ | async)"
+        [error]="(error$ | async)">
+        </app-signin-form>
+      <p class="text-center my-4">You dont have an account yet? <a [routerLink]=" ['/auth/signup'] ">Sign up</a></p>
+    </div>
+  </div>
+</div>

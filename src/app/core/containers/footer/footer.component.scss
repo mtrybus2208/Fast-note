@@ -1,0 +1,12 @@
+@import '~sass/variables';
+
+.navbar-footer{
+  background-color: $primary-dark;
+  color: $white;
+}
+
+@media(max-height: $change-display-height){
+  footer {
+    display : none;
+  }
+}

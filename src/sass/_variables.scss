@@ -1,0 +1,92 @@
+$white:    #fff !default;
+$gray-100: #fafafa !default;
+$gray-200: #F9F8FC !default;
+$gray-300: #EDEDED !default;
+$gray-400: #cbc8d0 !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-650: #646262 !default;
+$gray-700: #444 !default;
+$gray-800: #343a40 !default;
+$gray-900: #17141F !default;
+$black:    #000 !default;
+ 
+$lightYellow: #faf8f2 !default;
+$lightYellow: #faf8f2 !default;
+
+
+
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #B36BC5 !default;
+$purple-dark:  #8C6D96 !default;
+$purple-light:  #f6e4fb !default;
+$pink:    #e83e8c !default;
+$red:     #f55f5f !default;
+$orange:  #fd7e14 !default;
+$yellow:  #FABC52 !default;
+$yellow-light:  #FFF498 !default;
+$green:   #13B955 !default;
+$teal:    #20c997 !default;
+$cyan:    #009CDC !default;
+
+/* theme colors */
+$primary:       $purple !default;
+$primary-dark:  $purple-dark !default;
+$primary-light:  $purple-light !default;
+$secondary:     #A991D4 !default;
+
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-200 !default;
+$dark:          $gray-900 !default;
+
+// Options
+$enable-rounded: false !default;
+
+// Body
+$body-color:                $gray-650 !default;
+
+// Dropdowns
+$dropdown-link-color:               $gray-650 !default;
+$dropdown-link-hover-color:         $gray-650 !default;
+$dropdown-link-hover-bg:            $gray-100 !default;
+
+// Navs
+$nav-tabs-border-color:             $gray-300 !default;
+$nav-tabs-link-hover-border-color:  $primary !default;
+$navbar-light-color:                rgba($black,.5) !default;
+$navbar-light-hover-color:          rgba($black,.7) !default;
+$navbar-light-active-color:         rgba($black,.9) !default;
+$navbar-light-disabled-color:       rgba($black,.3) !default;
+$navbar-light-toggler-border-color: none !default;
+
+// List group
+$list-group-bg:                     $gray-900 !default;
+$list-group-border-color:           transparent !default;
+
+$list-group-hover-bg:               lighten($list-group-bg, 10%) !default;
+$list-group-active-color:           $white !default;
+$list-group-active-bg:              $list-group-bg !default;
+
+$list-group-disabled-color:         lighten($list-group-bg, 30%) !default; 
+
+// Forms
+$input-focus-border-color:              $primary !default;
+$input-bg:                              transparent !default;  
+$input-disabled-bg:                     $gray-200 !default;
+
+$input-color:                           $gray-650 !default;
+$input-border-color:                    $gray-400 !default;
+
+// Navbar min height
+$navbar-min-height: 60px !default;
+
+// sidebar setting
+$notes-sidebar-top-max-height: 220px !default;
+
+// Change display height
+$change-display-height: 747px !default;

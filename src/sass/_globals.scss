@@ -1,0 +1,50 @@
+@import '~sass/variables';
+
+// selection colors
+::selection{
+  background: $yellow-light;
+}
+::-moz-selection{
+  background: $yellow-light;
+}
+img::selection{
+  background: transparent;
+}
+img::-moz-selection{
+  background: transparent;
+}
+
+// icon wrapper
+.icon-wrap{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+// shadow
+.light-shadow{
+  box-shadow: 10px 10px 35px -17px rgba(0,0,0,0.56);
+}
+body{
+  padding-top: $navbar-min-height;
+  background-image: url('./assets/img/auth-bg.jpg');
+}
+
+// modal
+.modal-content {
+  background-color: transparent;
+}
+
+// loader
+.loader{
+  animation: spin .7s infinite linear;
+  color: $primary;
+}
+.loader_light {
+  color: $white;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg);}
+  to { transform: rotate(360deg);}
+}

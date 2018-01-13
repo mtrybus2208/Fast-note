@@ -1,0 +1,20 @@
+@import '~sass/variables';
+
+.form-control {
+  background-image: none;
+  background-clip: padding-box;
+  border: $input-btn-border-width solid $input-border-color;
+}
+form {
+  background-color: $white;
+  border-color: $gray-200; 
+}
+.auth-form {
+  padding: 1.4rem;
+}
+
+@media(min-width: 767px) {
+  .auth-form{
+    padding: 2rem;
+  }
+}

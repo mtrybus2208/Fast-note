@@ -1,0 +1,26 @@
+@import '~sass/variables';
+
+.navbar-brand {
+  font-weight: 400!important;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+}
+.navbar{
+  min-height: $navbar-min-height;
+}
+
+.navbar-footer{
+  background-color: $purple-dark;
+  color: $white;
+}
+.navbar-toggler{
+  outline: none!important;
+}
+
+@media(min-width: 992px){
+  .list-toogle{
+    min-width: 170px;
+  }
+}

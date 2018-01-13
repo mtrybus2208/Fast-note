@@ -1,0 +1,23 @@
+<div class="notes">
+  <div class="notes__content"  [ngClass]="{'hideSidebar': !(notesSidebarOpened$ | async)}">
+
+    <div class="notes__sidebar-container">
+      <app-notes-sidebar
+        [notes]="(notes$ | async)"
+        [loading] = "(loading$ | async)"
+        [notesCount] = "(notesCount$ | async)"
+        [activeId] = "activeNoteId"
+        (filter)="filter($event)"
+        (createSelected)="onSelectNoteToCreate()"
+        (noteSelected)="onSelectNoteToDisplay($event)">
+      </app-notes-sidebar>
+    </div>
+
+    <div class="notes__details-container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
+
+ 

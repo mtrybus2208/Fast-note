@@ -1,0 +1,58 @@
+<form [formGroup]="signUpForm"  class="auth-form light-shadow">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="name@example.com" formControlName="email">
+    <div *ngIf="signUpForm.controls['email'].errors && signUpForm.controls['email'].touched" [@simpleFade]> 
+
+      <div class="alert alert-danger py-1 mt-2" role="alert"
+      *ngIf="signUpForm.controls['email'].errors?.required"> Email is required.
+      </div>
+
+      <div class="alert alert-danger py-1 mt-2" role="alert"
+      *ngIf="(signUpForm.controls['email'].errors?.email && !signUpForm.controls['email'].errors?.required)">
+      Email is invalid.
+      </div>
+
+    </div>
+  </div>
+ 
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" formControlName="password">
+    <div *ngIf="signUpForm.controls['password'].errors && signUpForm.controls['password'].touched" [@simpleFade]> 
+
+      <div class="alert alert-danger py-1 mt-2" role="alert"
+      *ngIf="signUpForm.controls['password'].errors.required"> Password is required.
+      </div>
+
+      <div class="alert alert-danger py-1 mt-2" role="alert"
+      *ngIf="(signUpForm.controls['password'].errors?.minlength && !signUpForm.controls['password'].errors?.required)">
+      Password is invalid (min 6 characters).
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Confirm Password</label>
+    <input type="password" class="form-control" formControlName="confirmPassword">
+
+    <div class="alert alert-danger py-1 mt-2" role="alert" *ngIf="signUpForm.errors?.passwordMismatch == true && signUpForm.controls['confirmPassword'].touched" >
+      Password does not match.
+    </div>
+
+  </div>
+ 
+  <button class="btn btn-primary btn-block icon-wrap mt-4 py-2"
+  [disabled]="!signUpForm.valid" (click)="onSignUp()">
+    <i class="material-icons loader loader_light" *ngIf="loading">sync</i> Sign Up
+  </button>
+ 
+  <div class="alert alert-danger py-3 mt-2" role="alert" *ngIf="error" [@slideHeight]>
+    {{ error }}
+  </div>
+
+
+ </form>
+
+ 

@@ -1,0 +1,55 @@
+<header>
+  <nav class="navbar navbar-light bg-light justify-content-between fixed-top light-shadow">
+    <ng-container [ngSwitch]="(auth$ | async)?.authenticated">
+      
+        <ng-container *ngSwitchCase="false">
+            <div class="d-flex align-items-center">
+              <img src="./../../../../assets/img/notepad.svg" alt="" style="width: 30px" class="mr-2">
+              <h1 class="title">Fast Note</h1>
+            </div>
+            <div>
+              <a class="mr-3"
+                [routerLink]="['/auth/signin']"
+                [class.active]="(routePath == 'signin')"> 
+                  Sign In
+              </a>
+              <a
+                [routerLink]="['/auth/signup']"
+                [class.active]="(routePath == 'signup')">
+                Sign Up
+              </a>
+            </div>
+
+        </ng-container>
+    
+        <ng-container *ngSwitchCase="true">
+
+          <div class="list-toogle">
+            <span class="d-none d-sm-inline">{{ toogleText }} notes list</span>
+            <button class="navbar-toggler" type="button" (click)="toogleNotesSidebar()">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="d-none d-md-flex align-items-center">
+            <img src="./../../../../assets/img/notepad.svg" alt="" style="width: 30px" class="mr-2">
+            <h1 class="title">Fast Note</h1>
+          </div>
+
+          <div ngbDropdown class="d-inline-block" placement="bottom-right">
+              <button class="btn icon-wrap user-button" 
+                ngbDropdownToggle>
+                <i class="material-icons mr-2">person</i>
+                {{ (auth$ | async)?.user?.email }}</button>
+              <div ngbDropdownMenu>
+                <button class="dropdown-item icon-wrap" (click)="signOut()">
+                  Log Out
+                  <i class="material-icons ml-3">exit_to_app</i>
+                </button>
+              </div>
+            </div>
+          
+        </ng-container>
+      </ng-container>
+  </nav>
+</header>
