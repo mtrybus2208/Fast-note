@@ -14,10 +14,10 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
-    "@angular/common": "^5.0.0",
     "@angular/cli": "1.5.3",
-    "@angular/compiler-cli": "^5.0.0",
+    "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
+    "@angular/compiler-cli": "^5.0.0",
     "@angular/core": "^5.0.0",
     "@angular/forms": "^5.0.0",
     "@angular/http": "^5.0.0",
@@ -33,13 +33,14 @@
     "@types/lodash": "^4.14.91",
     "bootstrap": "4.0.0-beta.2",
     "core-js": "^2.4.1",
+    "express": "^4.16.2",
     "lodash-es": "^4.17.4",
     "ngrx": "^2.0.1",
     "ngrx-store-localstorage": "^0.3.0",
     "rxjs": "^5.5.2",
+    "typescript": "~2.4.2",
     "web-animations-js": "^2.3.1",
-    "zone.js": "^0.8.14",
-    "typescript": "~2.4.2"
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/language-service": "^5.0.0",
