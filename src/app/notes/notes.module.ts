@@ -14,9 +14,6 @@ import { NoteDetailsComponent } from './containers/note-details/note-details.com
 import { NoteFormComponent } from './components/note-form/note-form.component';
 import { NoteSidebarComponent } from './components/notes-sidebar/notes-sidebar.component';
 
-
-
-
 @NgModule({
   declarations: [
     NotesComponent,

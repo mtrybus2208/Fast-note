@@ -36,11 +36,11 @@
   <button class="btn btn-primary btn-block icon-wrap mt-4 py-2"
   [disabled]="!signInForm.valid"
   (click)="onSignIn()">
-    <i class="material-icons loader loader_light" *ngIf="loading"  >sync</i>
+    <i class="material-icons loader loader_light" *ngIf="loading">sync</i>
     Sign in
   </button>
 
-  <div class="alert alert-danger py-3 mt-2" role="alert" *ngIf="error" [@slideHeight] >
+  <div class="alert alert-danger py-3 mt-2" role="alert" *ngIf="error" [@slideHeight]>
       {{ error }}
   </div>
 </form>

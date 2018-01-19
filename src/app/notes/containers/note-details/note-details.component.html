@@ -1,8 +1,7 @@
 <div class="note-form__wrap p-md-3 p-xl-4">
   <app-note-form
     [note]="(note$ | async)" 
-    [loading]="(loading$ | async)" 
-    [loaded]="(loaded$ | async)" 
+    [notesState]="(notesListState$ | async)" 
     (create)="onCreate($event)"
     (update)="onUpdate($event)"
     (removeConfirm)="onRemoveConfirm($event)">

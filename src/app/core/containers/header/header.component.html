@@ -10,12 +10,12 @@
             <div>
               <a class="mr-3"
                 [routerLink]="['/auth/signin']"
-                [class.active]="(routePath == 'signin')"> 
+                routerLinkActive="active"> 
                   Sign In
               </a>
-              <a
+              <a  
                 [routerLink]="['/auth/signup']"
-                [class.active]="(routePath == 'signup')">
+                routerLinkActive="active">
                 Sign Up
               </a>
             </div>
@@ -25,7 +25,7 @@
         <ng-container *ngSwitchCase="true">
 
           <div class="list-toogle">
-            <span class="d-none d-sm-inline">{{ toogleText }} notes list</span>
+            <span class="d-none d-sm-inline">{{ (notesSidebarOpened$ | async) ? 'Hide' : 'Show' }} notes list</span>
             <button class="navbar-toggler" type="button" (click)="toogleNotesSidebar()">
               <span class="navbar-toggler-icon"></span>
             </button>

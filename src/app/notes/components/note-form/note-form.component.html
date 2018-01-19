@@ -1,5 +1,5 @@
 <h3 class="text-center form-title pt-3">
-  <i class="material-icons loader" *ngIf="loading && loaded" [@simpleFade]>sync</i>
+  <!-- <i class="material-icons loader" *ngIf="loading && notesState.loaded" [@simpleFade]>sync</i> -->
   <span *ngIf="!exists"> Create new note</span>
   <span *ngIf="exists"> Your Note</span>
 </h3>
@@ -40,23 +40,34 @@
     <input type="text" class="form-control" formControlName="tags">
   </div>
 
-  <button class="btn btn-primary btn-block py-2" 
+  <button class="btn btn-primary icon-wrap btn-block py-2" 
     [disabled]="!noteForm.valid"
     *ngIf="!exists"
     (click)="createNote(noteForm)">
+    <i class="material-icons loader" *ngIf="notesState.loading && notesState.loaded" [@simpleFade]>sync</i>
     Create Note
   </button>
 
   <div class="btn-group d-flex" role="group" *ngIf="exists">
-      <button class="btn btn-primary w-100 my-3 mr-2 mr-sm-3"
+      <button class="btn btn-primary btn-save w-100 my-3 mr-2 mr-sm-3"
         [disabled]="!noteForm.valid || !valueChanges"
         (click)="updateNote(noteForm)">
         <span class="icon-wrap">
-          <i class="material-icons">mode_edit</i> Save changes
+          <i class="material-icons loader loader-primary" 
+            *ngIf="notesState.loaded && notesState.updateInProgress" 
+            [@simpleFade]>
+            sync
+          </i>
+          <i class="material-icons mr-2">mode_edit</i> Save changes
         </span>
-      </button> 
+      </button>
       <button class="btn btn-danger w-100 my-3" (click)="removeNoteConfirm()">
         <span class="icon-wrap">
+          <i class="material-icons loader"
+            *ngIf="notesState.loaded && notesState.removeInProgress"
+            [@simpleFade]>
+            sync
+          </i>
           <i class="material-icons mr-2">delete_sweep</i> Delete
         </span>
       </button>

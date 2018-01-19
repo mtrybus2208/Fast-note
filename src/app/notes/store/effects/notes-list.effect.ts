@@ -30,10 +30,10 @@ export class NotesListEffects {
       withLatestFrom(this.notesStore$.select(fromNotes.getAllNotes)),
       map((payload: Array<any>) => {
         const [action, notes] = payload;
-        const filtered = notes.filter((note) => note.title.includes(action.payload));
-        if (filtered.length > 0) {  return filtered; }
-        if (filtered.length === 0) { return []; }
-        return filtered;
+        const filtered = notes.filter(
+          (note) => note.title.match(new RegExp(action.payload, 'gi'))
+        );
+        return filtered ? filtered : [];
       }),
       map(filteredNotes => new notesActions.FilterSuccess(filteredNotes)),
       catchError(error => of(new notesActions.LoadNotesFail(error))),

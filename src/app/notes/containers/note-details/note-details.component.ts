@@ -23,8 +23,8 @@ export class NoteDetailsComponent implements OnInit {
   openedModalName$: Observable<any>;
   openedModalName: string;
   actualNote: string;
-  loading$: Observable<boolean>;
-  loaded$: Observable<boolean>;
+  /* ??? dodaj typowanie dla stora :D*/
+  notesListState$: Observable<fromStore.NotesState>;
 
   public isCollapsed = false;
 
@@ -40,9 +40,7 @@ export class NoteDetailsComponent implements OnInit {
 
     // Use the selector to directly get the opened modal name from the state
     this.openedModalName$ = this.rootStore.select(fromRootStore.getOpenedModalName);
-
-    this.loading$ = this.store.select(fromStore.getNotesLoading);
-    this.loaded$ = this.store.select(fromStore.getNotesLoaded);
+    this.notesListState$ =  this.store.select(fromStore.getNotesList);
   }
 
   onCreate(event: Note) {

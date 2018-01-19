@@ -1,11 +1,18 @@
 @import '~sass/variables';
 
 .loader {
-  font-size: 2rem;
-  color: $gray-650;
+  color: $white;
+}
+.loader-primary {
+  color: $primary;
 }
 .form-title{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.btn-primary.btn-save:disabled {
+  opacity: 1;
+  background-color: rgba($primary, .25);
+  border-color: transparent;
 }

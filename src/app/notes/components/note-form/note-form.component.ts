@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 import isEqual from 'lodash-es/isEqual';
 import { state, trigger, transition, style, animate, query, stagger } from '@angular/animations';
 
+import * as fromStore from './../../store';
 import { Note } from './../../../shared/models/note.model';
 import { NotePropertiesToPatch, NotePatchInfo } from './../../../shared/services/notes-api.service';
 import { simpleFade } from './../../../shared/animations';
@@ -25,9 +26,8 @@ export class NoteFormComponent implements OnInit, OnDestroy, OnChanges {
   valueChanges: boolean;
   valueSubscription$: Subscription;
 
+  @Input() notesState: fromStore.NotesState;
   @Input() note: Note;
-  @Input() loading: boolean;
-  @Input() loaded: boolean;
   @Output() create = new EventEmitter<Note>();
   @Output() update = new EventEmitter<{ patch: NotePatchInfo, note: Note }>();
   @Output() removeConfirm = new EventEmitter<string>();

@@ -14,9 +14,6 @@ $black:    #000 !default;
 $lightYellow: #faf8f2 !default;
 $lightYellow: #faf8f2 !default;
 
-
-
-
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #B36BC5 !default;
@@ -63,6 +60,12 @@ $navbar-light-hover-color:          rgba($black,.7) !default;
 $navbar-light-active-color:         rgba($black,.9) !default;
 $navbar-light-disabled-color:       rgba($black,.3) !default;
 $navbar-light-toggler-border-color: none !default;
+
+//links 
+$link-color:                $primary !default;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
 
 // List group
 $list-group-bg:                     $gray-900 !default;

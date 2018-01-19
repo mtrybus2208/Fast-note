@@ -6,14 +6,18 @@ export interface NotesListState {
   displayedEntities: { [_id: string]: Note };
   loaded: boolean;
   loading: boolean;
+  removeInProgress: boolean;
+  updateInProgress: boolean;
   count: number;
 }
 
 export const initialState: NotesListState = {
   entities: {},
-  displayedEntities: {}, 
+  displayedEntities: {},
   loaded: false,
   loading: false,
+  removeInProgress: false,
+  updateInProgress: false,
   count: null,
 };
 
@@ -28,15 +32,22 @@ export function reducer(state = initialState, action: fromNotesList.NotesListAct
       return {
         ...state,
         loading: true,
+        updateInProgress: true,
         entities,
       };
     }
-    case fromNotesList.REMOVE_NOTE:
     case fromNotesList.CREATE_NOTE:
     case fromNotesList.LOAD_NOTES: {
       return {
         ...state,
         loading: true,
+      };
+    }
+    case fromNotesList.REMOVE_NOTE: {
+      return {
+        ...state,
+        loading: true,
+        removeInProgress: true,
       };
     }
     case fromNotesList.LOAD_NOTES_SUCCESS: {
@@ -108,6 +119,7 @@ export function reducer(state = initialState, action: fromNotesList.NotesListAct
         displayedEntities: entities,
         loading: false,
         loaded: true,
+        updateInProgress: false,
       };
     }
     case fromNotesList.REMOVE_NOTE_SUCCESS: {
@@ -120,6 +132,7 @@ export function reducer(state = initialState, action: fromNotesList.NotesListAct
         entities,
         displayedEntities: entities,
         loading: false,
+        removeInProgress: false,
         count,
       };
     }
@@ -130,6 +143,8 @@ export function reducer(state = initialState, action: fromNotesList.NotesListAct
         entities: {},
         loading: false,
         loaded: false,
+        updateInProgress: false,
+        removeInProgress: false,
       };
     }
     default: {
@@ -145,3 +160,5 @@ export const getNotesListEntities = (state: NotesListState) => state.entities;
 export const getDisplayedEntities = (state: NotesListState) => state.displayedEntities;
 export const getNotesListLoading = (state: NotesListState) => state.loading;
 export const getNotesListLoaded = (state: NotesListState) => state.loaded;
+export const getNotesListUpdateProgress = (state: NotesListState) => state.updateInProgress;
+export const getNotesListDeleteProgress = (state: NotesListState) => state.removeInProgress;

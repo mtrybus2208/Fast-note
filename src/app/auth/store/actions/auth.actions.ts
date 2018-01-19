@@ -19,12 +19,12 @@ export class SignUp implements Action {
 
 export class SignUpSuccess implements Action {
   readonly type = SIGN_UP_SUCCESS;
-  constructor(public payload: any) {}
+  constructor(public payload?: any) {}
 }
 
 export class SignUpFail implements Action {
   readonly type = SIGN_UP_FAIL;
-  constructor(public payload: any) {}
+  constructor(public payload?: any) {}
 }
 
 /* SignIn */

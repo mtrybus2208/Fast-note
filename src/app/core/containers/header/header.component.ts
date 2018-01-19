@@ -16,12 +16,9 @@ import * as fromAuthStore from './../../../auth/store';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   notesSidebarOpened$: Observable<boolean>;
-  notesSidebarOpened: boolean;
+  isOpened: boolean;
   notesSubscription: Subscription;
-  toogleText: string;
   auth$: Observable<fromAuthStore.AuthState>;
-  routerUrlSub: Subscription;
-  routePath: string;
 
   constructor(private store: Store<fromAppStore.State>) { }
 
@@ -29,23 +26,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.notesSidebarOpened$ =  this.store.select(fromAppStore.getNotesSidebarState);
 
     this.notesSubscription = this.notesSidebarOpened$.subscribe((value) => {
-      this.notesSidebarOpened = value;
-      this.toogleText = value ? 'Hide' : 'Show';
+      this.isOpened = value;
     });
 
     this.auth$ = this.store.select(fromAuthStore.getAuthState);
-
-    this.routerUrlSub =  this.store.select(fromAppStore.getRouterState)
-      .subscribe((state) => {
-        if(state) {
-          this.routePath = state.state.url.split('/')[2] || null;
-        }
-
-    });
   }
 
   toogleNotesSidebar() {
-    const action = this.notesSidebarOpened ? new fromAppStore.CloseNotesSidebar() : new fromAppStore.OpenNotesSidebar();
+    const action = this.isOpened ? new fromAppStore.CloseNotesSidebar() : new fromAppStore.OpenNotesSidebar();
     this.store.dispatch(action);
   }
 
@@ -55,7 +43,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.notesSubscription.unsubscribe();
-    this.routerUrlSub.unsubscribe();
   }
 
 }

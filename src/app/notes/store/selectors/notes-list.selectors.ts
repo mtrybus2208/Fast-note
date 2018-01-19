@@ -34,3 +34,5 @@ export const getSelectedNote = createSelector(getNotesListEntities, fromRoot.get
 
 export const getNotesLoaded = createSelector(getNotesList, fromNotesList.getNotesListLoaded);
 export const getNotesLoading = createSelector(getNotesList, fromNotesList.getNotesListLoading);
+export const getNotesListUpdateProgress = createSelector(getNotesList, fromNotesList.getNotesListUpdateProgress);
+export const getNotesListDeleteProgress = createSelector(getNotesList, fromNotesList.getNotesListDeleteProgress);
