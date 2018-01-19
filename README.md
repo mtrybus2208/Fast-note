@@ -19,7 +19,7 @@
 * ngrx
 * RxJS
 
-Preview: <a href="https://mtrybus2208.github.io/Fast-note/auth/signin">mtrybus2208.github.io/Fast-note/</a>
+Preview: <a href="https://fast-note.surge.sh/">fast-note.surge.sh</a>
 
 <img src="https://images81.fotosik.pl/962/275dde32082da72bgen.png">
 <img src="https://images83.fotosik.pl/961/af6cec38e4ad6014.png">

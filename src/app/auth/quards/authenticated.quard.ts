@@ -7,7 +7,7 @@ import { of } from 'rxjs/observable/of';
 import { map, tap, take, catchError } from 'rxjs/operators';
 
 import * as fromAuthStore from './../store';
-import * as fromRootStore from './../../store';
+import * as fromRootStore from './../../core/store';
 
 @Injectable()
 export class AuthenticatedGuard implements CanActivate {

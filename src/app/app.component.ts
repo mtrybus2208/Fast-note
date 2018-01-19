@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as fromRootStore from './store';
-import * as layoutActions from './store/actions/layout.actions';
+import * as fromRootStore from './core/store';
+import * as layoutActions from './core/store/actions/layout.actions';
 
 @Component({
   selector: 'app-root',

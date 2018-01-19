@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { Note } from './../../../shared/models/note.model';
 import { NotePatchInfo } from './../../../shared/services/notes-api.service';
 import * as fromStore from './../../store';
-import * as fromRootStore from './../../../store';
+import * as fromRootStore from './../../../core/store';
 
 import { simpleFade } from './../../../shared/animations';
 

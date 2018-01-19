@@ -6,8 +6,8 @@ import { of } from 'rxjs/observable/of';
 import { Observable } from 'rxjs/Observable';
 
 import * as notesActions from './../actions/notes-list.actions';
-import * as layoutActions from './../../../store/actions';
-import * as fromRoot from './../../../store';
+import * as layoutActions from './../../../core/store/actions';
+import * as fromRoot from './../../../core/store';
 import * as fromNotes from './../../store';
 import * as fromServices from './../../../shared/services/notes-api.service';
 

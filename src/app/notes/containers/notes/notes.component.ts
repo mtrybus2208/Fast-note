@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
 import * as fromNotesStore from './../../store';
-import * as fromRootStore from './../../../store';
+import * as fromRootStore from './../../../core/store';
 
 import { NotesApiService } from './../../../shared/services/notes-api.service';
 import { Note } from './../../../shared/models/note.model';

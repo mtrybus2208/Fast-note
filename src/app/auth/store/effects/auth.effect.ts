@@ -7,7 +7,7 @@ import { of } from 'rxjs/observable/of';
 import { Observable } from 'rxjs/Observable';
 
 import * as authActions from './../actions';
-import * as fromRoot from './../../../store';
+import * as fromRoot from './../../../core/store';
 import * as fromNotes from './../../../notes/store';
 import { AuthUserService, UserCredentials } from './../../services/auth-user.service';
 import { User } from './../../models/user.model';

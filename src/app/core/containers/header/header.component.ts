@@ -1,10 +1,10 @@
-import { getRouterState } from './../../../store/reducers/index';
+import { getRouterState } from './../../../core/store/reducers/index';
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import * as fromAppStore from './../../../store';
+import * as fromAppStore from './../../../core/store';
 import * as fromAuthStore from './../../../auth/store';
 
 @Component({
