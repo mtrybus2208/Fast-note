@@ -67,9 +67,7 @@ export function reducer(state = initialState, action: fromAuth.AuthAction): Auth
       };
     }
     default: {
-      return {
-        ...state,
-      };
+      return state;
     }
   }
 }

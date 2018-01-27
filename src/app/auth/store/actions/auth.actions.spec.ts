@@ -8,12 +8,17 @@ describe('Auth Actions', () => {
     /* Sign Up */
     describe('Sign Up', () => {
       it('should create an action', () => {
+
+        // Arrange
         const payload: UserCredentials = {
           email: 'test@email.com',
           password: '123456',
         };
+
+        // Act
         const action = new fromAuth.SignUp(payload);
 
+        // Assert
         expect({ ...action }).toEqual({
           type: fromAuth.SIGN_UP,
           payload,
