@@ -5,15 +5,13 @@ export interface LayoutState {
   openedModalName: string;
   windowHeight: number;
   windowWidth: number;
-/* The description of the different parts of the layout go here */
 }
 
 export const initialState: LayoutState = {
   notesSidebarOpened: true,
   openedModalName: null,
   windowHeight: window.screen.height,
-  windowWidth: window.screen.width
-/* The initial values of the layout state will be initialized here */
+  windowWidth: window.screen.width,
 };
 
 

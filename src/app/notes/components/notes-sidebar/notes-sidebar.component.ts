@@ -11,7 +11,6 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-
 import 'rxjs/add/observable/fromEvent';
 import { debounceTime, map, filter } from 'rxjs/operators';
 
@@ -35,8 +34,8 @@ export class NoteSidebarComponent implements OnInit, AfterViewInit {
   @Input() activeId: string;
   @Output() createSelected = new EventEmitter<boolean>();
   @Output() noteSelected = new EventEmitter<string>();
-  @ViewChild('searchInput') searchInput: ElementRef;
   @Output() filter = new EventEmitter<string>();
+  @ViewChild('searchInput') searchInput: ElementRef;
 
   constructor(private router: Router) { }
 

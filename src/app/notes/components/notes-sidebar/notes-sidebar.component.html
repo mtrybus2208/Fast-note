@@ -1,16 +1,14 @@
 <div class="notes-sidebar" *ngIf="notes">
   <div class="notes-sidebar__top">
     <div class="notes-sidebar__top-info d-flex justify-content-between py-3 px-2">
-
-        <span class="decks-count icon-wrap">
-          <i class="material-icons">account_circle</i>
-          Youe have: {{ notesCount }} notes
-        </span>
-
-        <span class="decks-count icon-wrap">
-            <i class="material-icons">filter_list</i>
-            Filter 
-        </span>
+      <span class="decks-count icon-wrap">
+        <i class="material-icons">account_circle</i>
+        Youe have: {{ notesCount }} notes
+      </span>
+      <span class="decks-count icon-wrap">
+        <i class="material-icons">filter_list</i>
+        Filter 
+      </span>
     </div>
 
     <input type="text" class="form-control my-2" placeholder="Search note" #searchInput>
@@ -27,7 +25,7 @@
   <div class="notes-sidebar__body">
      
     <div class="text-center" *ngIf="loading && notes.length < 1">
-        <i class="material-icons loader">sync</i>
+      <i class="material-icons loader">sync</i>
     </div>
 
     <div class="list-group" [@fadeItems]="notes.length">

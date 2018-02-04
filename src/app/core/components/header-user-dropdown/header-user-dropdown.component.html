@@ -1,0 +1,15 @@
+<div ngbDropdown class="d-inline-block" placement="bottom-right">
+  <button
+    class="btn icon-wrap user-button" 
+    ngbDropdownToggle>
+    <i class="material-icons mr-2">person</i>
+    {{userEmail}}
+  </button>
+
+  <div ngbDropdownMenu>
+    <button class="logout dropdown-item icon-wrap" (click)="onSignOut()">
+      Log Out
+      <i class="material-icons ml-3">exit_to_app</i>
+    </button>
+  </div>
+</div>  

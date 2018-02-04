@@ -1,16 +1,18 @@
 <form [formGroup]="signInForm" class="auth-form light-shadow">
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" placeholder="name@example.com" formControlName="email">
+    <input type="email" class="form-control"placeholder="name@example.com" formControlName="email">
     <div *ngIf="signInForm.controls['email'].errors && signInForm.controls['email'].touched" [@simpleFade]> 
 
-      <div class="alert alert-danger py-1 mt-2"role="alert"
-      *ngIf="signInForm.controls['email'].errors.required"> Email is required.
+      <div
+        class="alert alert-danger py-1 mt-2"role="alert"
+        *ngIf="signInForm.controls['email'].errors.required">
+        Email is required.
       </div>
 
       <div class="alert alert-danger py-1 mt-2" role="alert"
-      *ngIf="(signInForm.controls['email'].errors.email && !signInForm.controls['email'].errors.required)">
-      Email is invalid.
+        *ngIf="(signInForm.controls['email'].errors.email && !signInForm.controls['email'].errors.required)">
+        Email is invalid.
       </div>
 
     </div>
@@ -19,28 +21,35 @@
   <div class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control" formControlName="password">
-    <div *ngIf="signInForm.controls['password'].errors && signInForm.controls['password'].touched" [@simpleFade]> 
+    <div 
+      *ngIf="signInForm.controls['password'].errors && signInForm.controls['password'].touched"
+      [@simpleFade]> 
 
-      <div class="alert alert-danger py-1 mt-2"role="alert"
-      *ngIf="signInForm.controls['password'].errors.required"> Password is required.
+      <div
+        class="alert alert-danger py-1 mt-2"role="alert"
+        *ngIf="signInForm.controls['password'].errors.required">
+        Password is required.
       </div>
 
       <div class="alert alert-danger py-1 mt-2" role="alert"
-      *ngIf="(signInForm.controls['password'].errors.minlength && !signInForm.controls['password'].errors.required)">
-      Password is invalid (min 6 characters).
+        *ngIf="(signInForm.controls['password'].errors.minlength && !signInForm.controls['password'].errors.required)">
+        Password is invalid (min 6 characters).
       </div>
       
     </div>
   </div>
 
   <button class="btn btn-primary btn-block icon-wrap mt-4 py-2"
-  [disabled]="!signInForm.valid"
-  (click)="onSignIn()">
+    [disabled]="!signInForm.valid"
+    (click)="onSignIn()">
     <i class="material-icons loader loader_light" *ngIf="loading">sync</i>
     Sign in
   </button>
 
-  <div class="alert alert-danger py-3 mt-2" role="alert" *ngIf="error" [@slideHeight]>
-      {{ error }}
+  <div class="alert alert-danger py-3 mt-2"
+    role="alert"
+    *ngIf="error"
+    [@slideHeight]>
+    {{error}}
   </div>
 </form>

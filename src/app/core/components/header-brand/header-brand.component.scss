@@ -1,0 +1,14 @@
+@import '~sass/variables';
+
+.title {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 400;
+}
+.logo {
+ padding-top: .2rem;
+  margin-right: .3rem; 
+}
+.logo > i {
+  color: lighten($purple, 10%);
+}  

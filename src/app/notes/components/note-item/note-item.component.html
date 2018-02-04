@@ -3,13 +3,20 @@
   (click)="selectNoteToDisplay(note._id)"
   class="list-group-item list-group-item-action light-shadow">
   <div class="note-item__top">
-      <span class="icon-wrap note-item__title"><i class="material-icons note-icon">add_alert</i> {{ note.importance }}</span>
-      <span class="icon-wrap note-item__date"><i class="material-icons note-icon">today</i> {{ note.date }}</span>
+      <span class="icon-wrap note-item__title">
+        <i class="material-icons note-icon">add_alert</i>
+        {{note.importance}}
+      </span>
+      <span class="icon-wrap note-item__date">
+        <i class="material-icons note-icon">today</i>
+        {{note.date}}
+      </span>
     </div>
   <div class="note-panel">
-    <h5 class="m-0"> {{ note.title }}</h5>
+    <h5 class="m-0"> {{note.title}}</h5>
   </div>
   <div class="note-panel d-none d-sm-flex">
-    <p class="m-0">{{ note.description }}</p>
+    <p class="m-0">{{note.description}}</p>
   </div>
 </div>
+<!--   [class.note-active]="isActive" -->

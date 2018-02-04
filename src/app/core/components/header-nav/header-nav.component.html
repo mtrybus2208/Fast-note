@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light fixed-top light-shadow">
+  <ng-container class="panel" *ngIf="authenticated">
+    <app-header-toggle
+      [sidebarStatus]="sidebarStatus"
+      (sidebarToggle)="onSidebarToggle($event)">
+    </app-header-toggle>
+
+    <app-header-brand></app-header-brand>
+
+    <app-header-user-dropdown
+      [userEmail]="userEmail"
+      (signOut)="onSignOut()">
+    </app-header-user-dropdown> 
+  </ng-container>
+
+  <ng-container class="panel" *ngIf="!authenticated">
+    <app-header-auth-nav></app-header-auth-nav>
+    
+    <app-header-brand></app-header-brand>
+  </ng-container>
+</nav>

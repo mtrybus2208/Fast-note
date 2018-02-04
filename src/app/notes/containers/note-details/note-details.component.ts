@@ -5,10 +5,9 @@ import { map } from 'rxjs/operators';
 
 import { Note } from './../../../shared/models/note.model';
 import { NotePatchInfo } from './../../../shared/services/notes-api.service';
+import { simpleFade } from './../../../shared/animations';
 import * as fromStore from './../../store';
 import * as fromRootStore from './../../../core/store';
-
-import { simpleFade } from './../../../shared/animations';
 
 @Component({
   selector: 'app-note-details',
@@ -23,7 +22,6 @@ export class NoteDetailsComponent implements OnInit {
   openedModalName$: Observable<any>;
   openedModalName: string;
   actualNote: string;
-  /* ??? dodaj typowanie dla stora :D*/
   notesListState$: Observable<fromStore.NotesState>;
 
   public isCollapsed = false;
@@ -37,8 +35,6 @@ export class NoteDetailsComponent implements OnInit {
           return note || null;
         }),
       );
-
-    // Use the selector to directly get the opened modal name from the state
     this.openedModalName$ = this.rootStore.select(fromRootStore.getOpenedModalName);
     this.notesListState$ =  this.store.select(fromStore.getNotesList);
   }
@@ -61,6 +57,5 @@ export class NoteDetailsComponent implements OnInit {
     }
     this.rootStore.dispatch(new fromRootStore.CloseModal(null));
   }
-
 
 }

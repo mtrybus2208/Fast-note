@@ -5,20 +5,16 @@ describe('Auth Actions', () => {
 
   /* Sign Up Actions */
   describe('Sign Up Actions', () => {
-    /* Sign Up */
     describe('Sign Up', () => {
       it('should create an action', () => {
 
-        // Arrange
         const payload: UserCredentials = {
           email: 'test@email.com',
           password: '123456',
         };
 
-        // Act
         const action = new fromAuth.SignUp(payload);
 
-        // Assert
         expect({ ...action }).toEqual({
           type: fromAuth.SIGN_UP,
           payload,
@@ -26,7 +22,6 @@ describe('Auth Actions', () => {
       });
     });
 
-    /* SignUp Success */
     describe('Sign Up Success', () => {
       it('should create an action', () => {
         const payload = {};
@@ -39,7 +34,6 @@ describe('Auth Actions', () => {
       });
     });
 
-    /* Sign Up Fail */
     describe('Sign Up Fail', () => {
       it('should create an action', () => {
         const payload = {};
@@ -51,13 +45,10 @@ describe('Auth Actions', () => {
         });
       });
     });
-
   });
 
-  /* Sign In Actions */
   describe('Sign In Actions', () => {
 
-    /* Sign In */
     describe('Sign In', () => {
       it('should create an action', () => {
         const payload: UserCredentials = {
@@ -73,7 +64,6 @@ describe('Auth Actions', () => {
       });
     });
 
-    /* Sign In Success */
     describe('Sign In Success', () => {
       it('should create an action', () => {
         const payload = {};
@@ -86,7 +76,6 @@ describe('Auth Actions', () => {
       });
     });
 
-    /* Sign In Fail */
     describe('Sign In Fail', () => {
       it('should create an action', () => {
         const payload = {};
@@ -101,10 +90,8 @@ describe('Auth Actions', () => {
 
   });
 
-  /* Sign Out Actions */
   describe('Sign Out Actions', () => {
 
-    /* Sign Out */
     describe('Sign Out', () => {
       it('should create an action', () => {
         const payload = {};
@@ -117,7 +104,6 @@ describe('Auth Actions', () => {
       });
     });
 
-    /* Sign Out */
     describe('Sign Out Success', () => {
       it('should create an action', () => {
         const payload = {};
@@ -130,7 +116,6 @@ describe('Auth Actions', () => {
       });
     });
 
-    /* Sign Out */
     describe('Sign Out Fail', () => {
       it('should create an action', () => {
         const payload = {};
@@ -142,25 +127,20 @@ describe('Auth Actions', () => {
         });
       });
     });
-
   });
 
-    /* Reset Error Actions */
-    describe('Reset Error Actions', () => {
+  describe('Reset Error Actions', () => {
+    describe('Reset Error', () => {
+      it('should create an action', () => {
+        const payload = {};
+        const action = new fromAuth.ResetError(payload);
 
-      /* Reset Error */
-      describe('Reset Error', () => {
-        it('should create an action', () => {
-          const payload = {};
-          const action = new fromAuth.ResetError(payload);
-
-          expect({ ...action }).toEqual({
-            type: fromAuth.RESET_ERROR,
-            payload,
-          });
+        expect({ ...action }).toEqual({
+          type: fromAuth.RESET_ERROR,
+          payload,
         });
       });
-
     });
+  });
 
 });

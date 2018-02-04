@@ -6,13 +6,12 @@
         [notes]="(notes$ | async)"
         [loading] = "(loading$ | async)"
         [notesCount] = "(notesCount$ | async)"
-        [activeId] = "activeNoteId"
+        [activeId] = "(activeNoteId$ | async)?.noteId"
         (filter)="filter($event)"
         (createSelected)="onSelectNoteToCreate()"
         (noteSelected)="onSelectNoteToDisplay($event)">
       </app-notes-sidebar>
-    </div>
-
+    </div> 
     <div class="notes__details-container">
       <router-outlet></router-outlet>
     </div>
